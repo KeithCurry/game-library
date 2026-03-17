@@ -582,7 +582,7 @@ async function getRecommendation() {
     const summary = backlog.map(g => `- ${g.title} (${platShort(g.platform)}, ${g.genre})`).join('\n');
     const res = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'x-api-key': '', 'anthropic-version': '2023-06-01', 'anthropic-dangerous-direct-browser-access': 'true' },
+      headers: { 'Content-Type': 'application/json', 'x-api-key': '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', 'anthropic-version': '2023-06-01', 'anthropic-dangerous-direct-browser-access': 'true' },
       body: JSON.stringify({
         model: 'claude-sonnet-4-20250514', max_tokens: 600,
         messages: [{ role: 'user', content:
