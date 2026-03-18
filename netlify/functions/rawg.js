@@ -1,1 +1,4 @@
-eb0f0c121ec349c6b57e2daca6b0c177
+index.html
+netlify/
+  functions/
+    rawg.js
