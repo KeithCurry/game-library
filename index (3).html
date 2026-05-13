@@ -402,7 +402,17 @@ function setFilter(type, val) {
   else if (type === 'sort')   sortBy       = val;
   render();
 }
-function setSearch(v) { searchQ = v; render(); }
+function setSearch(v) {
+  searchQ = v;
+  const inputBefore = document.querySelector('.search-wrap input');
+  const pos = inputBefore ? inputBefore.selectionStart : null;
+  render();
+  const inputAfter = document.querySelector('.search-wrap input');
+  if (inputAfter) {
+    inputAfter.focus();
+    if (pos !== null) inputAfter.setSelectionRange(pos, pos);
+  }
+}
 
 // ── Library render ────────────────────────────────────────────────────────────
 function renderLibrary() {
